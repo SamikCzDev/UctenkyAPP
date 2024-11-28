@@ -11,6 +11,7 @@ import android.view.Menu;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
+import androidx.annotation.Nullable;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -36,6 +37,7 @@ import cz.cloudcrew.uctenky.databinding.ActivityMainBinding;
 
 import cz.cloudcrew.uctenky.req.GetInfoFromToken;
 import cz.cloudcrew.uctenky.req.LoginRequestTask;
+import cz.cloudcrew.uctenky.ui.home.HomeFragment;
 
 public class MainActivity extends AppCompatActivity {
 

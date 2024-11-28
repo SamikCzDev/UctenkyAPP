@@ -45,8 +45,6 @@ public class HomeFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_home, container, false);
         listView = rootView.findViewById(R.id.listView);
 
-        fetchData();
-
         listView.setOnItemClickListener((parent, view, position, id) -> {
             String name = documentList.get(position).get("name");
             Toast.makeText(getActivity(), name, Toast.LENGTH_SHORT).show();
@@ -54,10 +52,14 @@ public class HomeFragment extends Fragment {
 
         return rootView;
     }
+    @Override
+    public void onResume() {
+        fetchData();
+        super.onResume();
+    }
 
     private void fetchData() {
-
-
+        documentList.clear();
         GetDocuments getInfoFromToken = new GetDocuments(getContext());
 
         getInfoFromToken.getInfo(MainActivity.authToken, new GetDocuments.DocumentsCallback() {
