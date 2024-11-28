@@ -1,9 +1,7 @@
 package cz.cloudcrew.uctenky.ui.home;
 
-import android.content.Context;
-import android.content.SharedPreferences;
+import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,10 +16,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -29,9 +23,9 @@ import java.util.Map;
 
 import cz.cloudcrew.uctenky.MainActivity;
 import cz.cloudcrew.uctenky.R;
+import cz.cloudcrew.uctenky.UctenkaInfo;
 import cz.cloudcrew.uctenky.adapters.DocumentAdapter;
 import cz.cloudcrew.uctenky.req.GetDocuments;
-import cz.cloudcrew.uctenky.req.GetInfoFromToken;
 
 public class HomeFragment extends Fragment {
 
@@ -47,6 +41,16 @@ public class HomeFragment extends Fragment {
 
         listView.setOnItemClickListener((parent, view, position, id) -> {
             String name = documentList.get(position).get("name");
+
+            Intent intent = new Intent(getContext(), UctenkaInfo.class);
+
+            // put data in intent
+            intent.putExtra("name", name);
+
+            // call startActivity method and pass intent
+            startActivity(intent);
+
+
             Toast.makeText(getActivity(), name, Toast.LENGTH_SHORT).show();
         });
 

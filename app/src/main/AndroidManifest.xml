@@ -20,7 +20,7 @@
         android:theme="@style/Theme.Uctenky"
         tools:targetApi="31">
         <activity
-            android:name=".Uctenkainfo"
+            android:name=".UctenkaInfo"
             android:exported="false" />
         <activity
             android:name=".DocumentCreateMainActivity"
