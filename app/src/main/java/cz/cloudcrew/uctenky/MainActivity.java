@@ -1,6 +1,10 @@
 package cz.cloudcrew.uctenky;
 
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
 
@@ -24,6 +28,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.OutputStreamWriter;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
 import cz.cloudcrew.uctenky.databinding.ActivityMainBinding;
 
 import cz.cloudcrew.uctenky.req.GetInfoFromToken;
@@ -42,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        checkPermissions();
        setContentView(R.layout.login_test);
 
        EditText usernameText = findViewById(R.id.username_text);
@@ -122,6 +130,7 @@ public class MainActivity extends AppCompatActivity {
         TextView usernameView = findViewById(R.id.username_text);
         TextView mailView = findViewById(R.id.mail_text);
 
+
         usernameView.setText(userName);
         mailView.setText(mail);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
@@ -136,9 +145,8 @@ public class MainActivity extends AppCompatActivity {
         binding.appBarMain.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null)
-                        .setAnchorView(R.id.fab).show();
+                Intent switchActivityIntent = new Intent(getBaseContext(), DocumentCreateMainActivity.class);
+                startActivity(switchActivityIntent);
             }
         });
         DrawerLayout drawer = binding.drawerLayout;
@@ -154,4 +162,30 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(navigationView, navController);
 
     }
+    private static final int REQUEST_CAMERA_PERMISSION = 100;
+
+    private void checkPermissions() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (checkSelfPermission(android.Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED ||
+                    checkSelfPermission(android.Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+
+                requestPermissions(new String[]{
+                        android.Manifest.permission.CAMERA,
+                        android.Manifest.permission.WRITE_EXTERNAL_STORAGE
+                }, REQUEST_CAMERA_PERMISSION);
+            }
+        }
+    }
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        if (requestCode == REQUEST_CAMERA_PERMISSION) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                Toast.makeText(this, "Oprávnění udělena.", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(this, "Oprávnění zamítnuta.", Toast.LENGTH_SHORT).show();
+            }
+        }
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+    }
+
 }
