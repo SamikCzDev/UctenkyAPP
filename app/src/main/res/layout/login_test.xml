@@ -1,0 +1,43 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingTop="16dp"
+    android:paddingRight="16dp"
+    android:paddingBottom="16dp">
+
+    <EditText
+        android:id="@+id/username_text"
+        android:layout_width="395dp"
+        android:layout_height="61dp"
+        android:ems="10"
+        android:hint="Username"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/passweord_text"
+        android:layout_width="384dp"
+        android:layout_height="81dp"
+        android:layout_below="@+id/username_text"
+        android:layout_marginTop="9dp"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/login_btn"
+        android:layout_width="395dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/passweord_text"
+        android:layout_marginTop="46dp"
+        android:text="Login" />
+
+    <Button
+        android:id="@+id/register_btn"
+        android:layout_width="395dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/login_btn"
+        android:layout_marginTop="69dp"
+        android:onClick="onClickRegister"
+        android:text="Register" />
+</RelativeLayout>
