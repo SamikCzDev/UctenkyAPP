@@ -68,9 +68,12 @@ public class UctenkaInfo extends AppCompatActivity {
             public void onSuccess(JSONObject jsonObject) throws JSONException {
                 TextView nameDoc = findViewById(R.id.nameDoc2);
                 TextView creationDate = findViewById(R.id.creationDate);
+                TextView dayCount = findViewById(R.id.dayCount);
 
                 nameDoc.setText(jsonObject.getString("documentName"));
-                creationDate.setText(jsonObject.getString("createdAt") + " : Počet dní:" + jsonObject.getString("daysToExpire"));
+                creationDate.setText(jsonObject.getString("createdAt"));
+                dayCount.setText(jsonObject.getString("daysToExpire")) ;
+
             }
 
             @Override

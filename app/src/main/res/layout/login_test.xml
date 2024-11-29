@@ -62,7 +62,7 @@
         tools:ignore="TouchTargetSizeCheck" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/backToList"
         android:layout_width="350dp"
         android:layout_height="60dp"
         android:layout_marginTop="10dp"
@@ -90,11 +90,11 @@
         android:importantForAutofill="no"
         android:inputType="textPassword"
         android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="@+id/button2"
-        app:layout_constraintEnd_toEndOf="@+id/button2"
+        app:layout_constraintBottom_toBottomOf="@+id/backToList"
+        app:layout_constraintEnd_toEndOf="@+id/backToList"
         app:layout_constraintHorizontal_bias="0.488"
-        app:layout_constraintStart_toStartOf="@+id/button2"
-        app:layout_constraintTop_toTopOf="@+id/button2"
+        app:layout_constraintStart_toStartOf="@+id/backToList"
+        app:layout_constraintTop_toTopOf="@+id/backToList"
         app:layout_constraintVertical_bias="0.433"
         tools:ignore="TouchTargetSizeCheck" />
 
@@ -111,7 +111,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2"
+        app:layout_constraintTop_toBottomOf="@+id/backToList"
         app:strokeColor="#000000"
         app:strokeWidth="3dp" />
 
