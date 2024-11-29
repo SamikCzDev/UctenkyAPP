@@ -1,77 +1,121 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    tools:context=".MainActivity">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <EditText
                 android:id="@+id/docName"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Document name"
-                android:inputType="text" />
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/edittext_background"
+                android:hint="@string/document_name"
+                android:textColorHint="@color/black"
+                android:textColor="@color/black"
+                android:inputType="text"
+                android:padding="10dp"
+                tools:ignore="TouchTargetSizeCheck" />
 
             <EditText
                 android:id="@+id/docExpire"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Date"
-                android:inputType="date" />
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/edittext_background"
+                android:hint="@string/date_input"
+                android:textColorHint="@color/black"
+                android:textColor="@color/black"
+                android:inputType="date"
+                android:padding="10dp"
+                tools:ignore="TouchTargetSizeCheck" />
 
             <ImageView
                 android:id="@+id/imageViewUploud"
-                android:layout_width="364dp"
+                android:layout_width="match_parent"
                 android:layout_height="300dp"
+                android:layout_marginTop="10dp"
                 android:background="#CCCCCC"
                 android:scaleType="centerCrop" />
 
             <Button
                 android:id="@+id/captureButton"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Capture Image" />
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="#ffffff"
+                android:text="Capture Image"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:cornerRadius="10dp"
+                app:strokeColor="#1B262C"
+                app:strokeWidth="3dp" />
 
             <ImageView
                 android:id="@+id/imageViewUploud2"
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
+                android:layout_marginTop="10dp"
                 android:background="#CCCCCC"
                 android:scaleType="centerCrop" />
 
             <Button
                 android:id="@+id/captureButton2"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Capture Image" />
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="#ffffff"
+                android:text="Capture Image"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:cornerRadius="10dp"
+                app:strokeColor="#1B262C"
+                app:strokeWidth="3dp" />
 
             <Button
                 android:id="@+id/uploadButton"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Create" />
+                android:layout_height="60dp"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="#1B262C"
+                android:text="Create"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:cornerRadius="10dp"
+                app:strokeColor="#000000"
+                app:strokeWidth="3dp" />
 
             <Button
                 android:id="@+id/backButton"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Back" />
+                android:layout_height="60dp"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="#1B262C"
+                android:text="Back"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:cornerRadius="10dp"
+                app:strokeColor="#000000"
+                app:strokeWidth="3dp" />
 
         </LinearLayout>
-
     </ScrollView>
 
+</androidx.constraintlayout.widget.ConstraintLayout>
 
-</LinearLayout>
+

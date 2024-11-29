@@ -1,43 +1,174 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingLeft="16dp"
-    android:paddingTop="16dp"
-    android:paddingRight="16dp"
-    android:paddingBottom="16dp">
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:importantForAccessibility="no"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/background" />
+
+    <TextView
+        android:id="@+id/title_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="220dp"
+        android:text="@string/login_title"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/email_bcg_login"
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#ffffff"
+        android:enabled="false"
+        app:cornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias=".493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_login"
+        app:strokeColor="#1B262C"
+        app:strokeWidth="3dp"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <EditText
         android:id="@+id/username_text"
-        android:layout_width="395dp"
-        android:layout_height="61dp"
-        android:ems="10"
-        android:hint="Username"
-        android:inputType="text" />
+        android:layout_width="293dp"
+        android:layout_height="42dp"
+        android:background="@android:color/transparent"
+        android:hint="@string/username"
+        android:textColorHint="@color/black"
+        android:importantForAutofill="no"
+        android:inputType="textEmailAddress"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/email_bcg_login"
+        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintStart_toStartOf="@+id/passweord_text"
+        app:layout_constraintTop_toTopOf="@+id/email_bcg_login"
+        app:layout_constraintVertical_bias="0.521"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="#ffffff"
+        android:enabled="false"
+        app:cornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/email_bcg_login"
+        app:strokeColor="#1B262C"
+        app:strokeWidth="3dp"
+        tools:ignore="SpeakableTextPresentCheck" />
+
 
     <EditText
         android:id="@+id/passweord_text"
-        android:layout_width="384dp"
-        android:layout_height="81dp"
-        android:layout_below="@+id/username_text"
-        android:layout_marginTop="9dp"
-        android:ems="10"
-        android:hint="Password"
-        android:inputType="textPassword" />
+        android:layout_width="294dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="15dp"
+        android:background="@android:color/transparent"
+        android:hint="@string/password"
+        android:textColorHint="@color/black"
+        android:importantForAutofill="no"
+        android:inputType="textPassword"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/button2"
+        app:layout_constraintEnd_toEndOf="@+id/button2"
+        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintStart_toStartOf="@+id/button2"
+        app:layout_constraintTop_toTopOf="@+id/button2"
+        app:layout_constraintVertical_bias="0.433"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <Button
         android:id="@+id/login_btn"
-        android:layout_width="395dp"
+        android:layout_width="320dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="#1B262C"
+        android:text="@string/login_btn"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        app:cornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.483"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button2"
+        app:strokeColor="#000000"
+        app:strokeWidth="3dp" />
+
+    <TextView
+        android:id="@+id/nebo_login"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/passweord_text"
-        android:layout_marginTop="46dp"
-        android:text="Login" />
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="nebo"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@+id/register_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login_btn" />
 
     <Button
         android:id="@+id/register_btn"
-        android:layout_width="395dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/login_btn"
-        android:layout_marginTop="69dp"
-        android:onClick="onClickRegister"
-        android:text="Register" />
-</RelativeLayout>
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="#1B262C"
+        android:text="@string/register_btn"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:cornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login_btn"
+        app:strokeColor="#000000"
+        app:strokeWidth="3dp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintStart_toStartOf="@id/imageView2"
+        app:layout_constraintTop_toTopOf="@id/username_text"
+        app:srcCompat="@drawable/user"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="38dp"
+        android:layout_marginEnd="5dp"
+        app:srcCompat="@drawable/password_logo"
+        app:layout_constraintEnd_toStartOf="@id/passweord_text"
+        app:layout_constraintTop_toBottomOf="@id/username_text"
+        tools:ignore="ContentDescription" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
