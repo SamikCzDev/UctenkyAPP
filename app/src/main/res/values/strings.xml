@@ -18,4 +18,9 @@
     <string name="capture_image">Capture Image</string>
     <string name="registr_btn_intro">Registrovat se</string>
     <string name="login_btn_intro">Přihlásit se</string>
+    <string name="add_document_title">Přidejte svou učtenku!</string>
+    <string name="document_foto_btn">Nahrej účtenku</string>
+    <string name="product_foto_btn">Nahrej produkt</string>
+    <string name="create_btn">Vytvořit</string>
+    <string name="back_btn">Zpět</string>
 </resources>
