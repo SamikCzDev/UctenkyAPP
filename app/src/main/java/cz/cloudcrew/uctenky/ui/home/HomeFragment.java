@@ -2,6 +2,7 @@ package cz.cloudcrew.uctenky.ui.home;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,7 +36,6 @@ public class HomeFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-
         View rootView = inflater.inflate(R.layout.fragment_home, container, false);
         listView = rootView.findViewById(R.id.listView);
 
@@ -53,7 +53,6 @@ public class HomeFragment extends Fragment {
 
             Toast.makeText(getActivity(), name, Toast.LENGTH_SHORT).show();
         });
-
         return rootView;
     }
     @Override

@@ -163,6 +163,58 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
+
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        if(item.getItemId() == 2131230788) {
+            authToken = null;
+            SharedPreferences prefs = getSharedPreferences("loginToken", Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = prefs.edit();
+
+            editor.remove("cookie");
+            editor.apply();
+            setContentView(R.layout.login_test);
+            EditText usernameText = findViewById(R.id.username_text);
+            EditText passwordText = findViewById(R.id.passweord_text);
+            Button loginButton = findViewById(R.id.login_btn);
+
+
+
+            LoginRequestTask loginManager = new LoginRequestTask(this);
+
+            loginButton.setOnClickListener(v -> {
+                String username = usernameText.getText().toString().trim();
+                String password = passwordText.getText().toString().trim();
+
+                if (username.isEmpty() || password.isEmpty()) {
+                    Toast.makeText(this, "Please fill in all fields.", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                // Použití LoginManager pro přihlášení
+                loginManager.loginUser(username, password, new LoginRequestTask.LoginCallback() {
+                    @Override
+                    public void onSuccess(String token) {
+                        Toast.makeText(MainActivity.this, "Token: " + token, Toast.LENGTH_LONG).show();
+                        editor.putString("cookie",token);
+                        editor.apply();
+                        authToken = token;
+                        getInfoFromToken();
+                    }
+
+                    @Override
+                    public void onError(String error) {
+                        Toast.makeText(MainActivity.this, "Error: " + error, Toast.LENGTH_LONG).show();
+                    }
+                });
+            });
+        }
+
+
+        return super.onOptionsItemSelected(item);
+
     }
     private static final int REQUEST_CAMERA_PERMISSION = 100;
 
