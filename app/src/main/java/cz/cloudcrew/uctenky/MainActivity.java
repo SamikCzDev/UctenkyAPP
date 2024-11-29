@@ -86,7 +86,6 @@ public class MainActivity extends AppCompatActivity {
            loginManager.loginUser(username, password, new LoginRequestTask.LoginCallback() {
                @Override
                public void onSuccess(String token) {
-                   Toast.makeText(MainActivity.this, "Token: " + token, Toast.LENGTH_LONG).show();
                    editor.putString("cookie",token);
                    editor.apply();
                    authToken = token;
@@ -110,7 +109,6 @@ public class MainActivity extends AppCompatActivity {
             public void onSuccess(String userName2, String mail2) {
                 userName = userName2;
                 mail = mail2;
-                Toast.makeText(MainActivity.this, "OK: " + mail, Toast.LENGTH_LONG).show();
                 setMainView();
             }
 
@@ -198,7 +196,6 @@ public class MainActivity extends AppCompatActivity {
                 loginManager.loginUser(username, password, new LoginRequestTask.LoginCallback() {
                     @Override
                     public void onSuccess(String token) {
-                        Toast.makeText(MainActivity.this, "Token: " + token, Toast.LENGTH_LONG).show();
                         editor.putString("cookie",token);
                         editor.apply();
                         authToken = token;
