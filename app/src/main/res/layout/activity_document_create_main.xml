@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     android:padding="16dp"
     tools:context=".MainActivity">
 
@@ -11,13 +12,24 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
         app:layout_constraintStart_toStartOf="parent">
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="@string/add_document_title"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textAlignment="center" />
 
             <EditText
                 android:id="@+id/docName"
@@ -59,7 +71,7 @@
                 android:layout_height="60dp"
                 android:layout_marginTop="10dp"
                 android:backgroundTint="#ffffff"
-                android:text="Capture Image"
+                android:text="@string/document_foto_btn"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 app:cornerRadius="10dp"
@@ -80,7 +92,7 @@
                 android:layout_height="60dp"
                 android:layout_marginTop="10dp"
                 android:backgroundTint="#ffffff"
-                android:text="Capture Image"
+                android:text="@string/product_foto_btn"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 app:cornerRadius="10dp"
@@ -93,7 +105,7 @@
                 android:layout_height="60dp"
                 android:layout_marginTop="20dp"
                 android:backgroundTint="#1B262C"
-                android:text="Create"
+                android:text="@string/create_btn"
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 app:cornerRadius="10dp"
@@ -106,12 +118,16 @@
                 android:layout_height="60dp"
                 android:layout_marginTop="20dp"
                 android:backgroundTint="#1B262C"
-                android:text="Back"
+                android:text="@string/back_btn"
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 app:cornerRadius="10dp"
                 app:strokeColor="#000000"
                 app:strokeWidth="3dp" />
+
+
+
+
 
         </LinearLayout>
     </ScrollView>
