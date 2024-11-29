@@ -1,22 +1,72 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/uctenka1"
-        android:layout_width="364dp"
-        android:layout_height="300dp"
-        android:background="#CCCCCC"
-        android:scaleType="centerCrop" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintStart_toStartOf="parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="16dp">
 
-    <ImageView
-        android:id="@+id/uctenka2"
-        android:layout_width="364dp"
-        android:layout_height="300dp"
-        android:background="#CCCCCC"
-        android:scaleType="centerCrop" />
+            <TextView
+                android:id="@+id/nameDoc2"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:text="TextView" />
 
-</LinearLayout>
+            <TextView
+                android:id="@+id/creationDate"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Document 1:" />
+
+            <ImageView
+                android:id="@+id/uctenka1"
+                android:layout_width="364dp"
+                android:layout_height="300dp"
+                android:background="#CCCCCC"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Document 2:" />
+
+            <ImageView
+                android:id="@+id/uctenka2"
+                android:layout_width="364dp"
+                android:layout_height="300dp"
+                android:background="#CCCCCC"
+                android:scaleType="centerCrop" />
+
+            <Button
+                android:id="@+id/removeDoc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Remove" />
+
+            <Button
+                android:id="@+id/backToList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Back" />
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
